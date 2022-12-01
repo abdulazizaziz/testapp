@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'firstapp',
 ]
 
 MIDDLEWARE = [
@@ -83,6 +84,14 @@ DATABASES = {
         'PORT': os.environ["PGPORT"],
     }
 }
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'testapp',
+#         'USER': 'root',
+#         'PASSWORD': 'Root@123',
+#     }
+# }
 
 
 # Password validation

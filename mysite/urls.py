@@ -17,9 +17,15 @@ from django.contrib import admin
 from django.urls import path
 
 from django.shortcuts import render
+from firstapp.models import Student
 
 def home(request):
-    return render(request, 'index.html')
+    if request.method == 'POST':
+        name = request.POST.get('name')
+        mark = request.POST.get('mark')
+        Student.objects.create(name=name, mark=mark)
+    students = Student.objects.all()
+    return render(request, 'index.html', {'students': students})
 
 urlpatterns = [
     path('admin/', admin.site.urls),
