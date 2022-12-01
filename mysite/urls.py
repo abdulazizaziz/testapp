@@ -16,10 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from django.http.response import HttpResponse
+from django.shortcuts import render
 
 def home(request):
-    return HttpResponse('<h1>Hello, World</h1>')
+    return render(request, 'indedx.html')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
